@@ -1,0 +1,70 @@
+<form [formGroup]="addProductForm">
+  <div class="card w-50 m-auto">
+    <div class="card-body">
+      <input
+        type="text"
+        class="form-control"
+        [class.is-invalid]="addProductForm.get('title')?.invalid && (addProductForm.get('title')?.dirty || addProductForm.get('title')?.touched)"
+        placeholder="Title"
+        aria-label="Title"
+        formControlName="title"
+      />
+      <div *ngIf="title.invalid && (title.dirty || title.touched)" class="invalid-feedback">
+        <div *ngIf="addProductForm?.get('title')?.errors?.['required']">
+          This field is required
+        </div>
+        <div *ngIf="addProductForm?.get('title')?.errors?.['maxLength']">
+          maximum should be 10
+        </div>
+        <div *ngIf="addProductForm?.get('title')?.errors?.['minLength']">
+          minimum should be 2
+        </div>
+      </div>
+      <select class="form-select my-2" aria-label="Brand" placeholder="Select Brand" formControlName="brand">
+        <option selected>Select Brand</option>
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="One Plus">One Plus</option>
+      </select>
+      <select class="form-select my-2" aria-label="Category" placeholder="Select Category" formControlName="category">
+        <option selected default>Select Category</option>
+        <option value="SmartPhone">SmartPhone</option>
+        <option value="Television">Television</option>
+        <option value="One Plus">Sound Bar</option>
+      </select>
+      <input
+        type="text"
+        class="form-control my-2"
+        placeholder="Price"
+        aria-label="Price"
+        formControlName="price"
+      />
+      <input
+        type="number"
+        class="form-control my-2"
+        placeholder="Discount"
+        aria-label="Discount"
+        formControlName="discountPercentage"
+      />
+      <input
+        type="text"
+        class="form-control my-2"
+        placeholder="Stock"
+        aria-label="Stock"
+        formControlName="stock"
+      />
+      <textarea
+        class="form-control my-2"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div
+      class="card-footer text-body-secondary d-flex align-items-center justify-content-evenly"
+    >
+      <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="reset()">Reset</button>
+    </div>
+  </div>
+</form>

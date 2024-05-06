@@ -9,20 +9,21 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ProductComponent } from './product/product.component';
-import { ViewProductsComponent } from './view-products/view-products.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { DontHaveAccessComponent } from './dont-have-access/dont-have-access.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProductComponent,
-    ViewProductsComponent,
     HomeComponent,
-    ProductDetailComponent
+    NotFoundComponent,
+    DontHaveAccessComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

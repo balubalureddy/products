@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-view-products',
@@ -25,6 +25,6 @@ export class ViewProductsComponent implements OnInit {
 
   goToProduct(id:any){
     console.log(id);
-    this.route.navigateByUrl(`view-product/${id}`)
+    this.route.navigateByUrl(`/product/${id}`)
   }
 }
