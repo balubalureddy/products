@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-product',
@@ -9,6 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AddProductComponent implements OnInit{
 
   addProductForm!:FormGroup;
+  templateForm = {title:"",brand:"",category:"",price:"",discountPercentage:"",stock:"",description:""};
   constructor(){
 
   }
@@ -49,4 +50,14 @@ export class AddProductComponent implements OnInit{
     // this.addProductForm.controls['title'].markAsUntouched();
     console.log(this.addProductForm.value);
   }
+
+  tempSubmit(){
+    console.log(this.templateForm);
+  }
+
+  resetTemp(tempform:NgForm): void{
+    tempform.reset()
+  }
+
+
 }

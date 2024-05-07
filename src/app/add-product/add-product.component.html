@@ -105,3 +105,67 @@
     </div>
   </div>
 </form>
+
+<form name="form" #tempform="ngForm" (submit)="tempform.form.valid && tempSubmit()">
+  <div class="card w-50 m-auto">
+    <div class="card-body">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Title"
+        aria-label="Title"
+        name="title"
+        #title="ngModel"
+        [(ngModel)]="templateForm.title"
+        required
+        [class.is-invalid]="tempform.submitted && title.errors"
+      />
+      <div *ngIf="tempform.submitted && title.errors" class="invalid-feedback">
+        <div *ngIf="title.errors['required']">
+          This field is required
+        </div>
+      </div>
+      <select class="form-select my-2" aria-label="Brand" placeholder="Select Brand">
+        <option selected>Select Brand</option>
+        <option value="Apple">Apple</option>
+        <option value="Samsung">Samsung</option>
+        <option value="One Plus">One Plus</option>
+      </select>
+      <select class="form-select my-2" aria-label="Category" placeholder="Select Category">
+        <option selected default>Select Category</option>
+        <option value="SmartPhone">SmartPhone</option>
+        <option value="Television">Television</option>
+        <option value="One Plus">Sound Bar</option>
+      </select>
+      <input
+        type="text"
+        class="form-control my-2"
+        placeholder="Price"
+        aria-label="Price"
+      />
+      <input
+        type="number"
+        class="form-control my-2"
+        placeholder="Discount"
+        aria-label="Discount"
+      />
+      <input
+        type="text"
+        class="form-control my-2"
+        placeholder="Stock"
+        aria-label="Stock"
+      />
+      <textarea
+        class="form-control my-2"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    <div
+      class="card-footer text-body-secondary d-flex align-items-center justify-content-evenly"
+    >
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-secondary" (click)="resetTemp(tempform)">Reset</button>
+    </div>
+  </div>
+  </div>
+</form>
