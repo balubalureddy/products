@@ -45,7 +45,8 @@ export class AddProductComponent implements OnInit{
     // this.addProductForm.setValue({title:"S24 Ultra",brand:"Samsung",category:"SmartPhone",price:"10000",discountPercentage:"5",stock:"1000",description:"something"});
     // this.addProductForm.patchValue({title:"S24 Ultra",brand:"Samsung"});
     // this.addProductForm.get('title')?.setValue("samsung")
-    this.addProductForm.reset();
+    // this.addProductForm.reset();
+    // this.addProductForm.controls['title'].markAsUntouched();
     console.log(this.addProductForm.value);
   }
 }
