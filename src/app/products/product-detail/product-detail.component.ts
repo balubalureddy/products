@@ -16,12 +16,12 @@ export class ProductDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params:any)=>{
       console.log(params,params.id)
       let id = params?.id || 0;
-      console.log(id)
-      this.product.getSingleProduct(params.id).subscribe((res:any)=>{
+      // let id = localStorage.getItem("id")
+      console.log(this.product.id,"from service");
+      this.product.getSingleProduct(id).subscribe((res:any)=>{
         this.productDetail = res;
         console.log(this.productDetail)
       })
     })
-    
   }
 }

@@ -1,12 +1,9 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="card col-sm-2" *ngFor="let product of products">
-            <img [src]="product.thumbnail" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{product.title}}({{product.brand}})</h5>
-              <p class="card-text">{{product.description}}</p>
-              <a (click)="goToProduct(product.id)" class="btn btn-primary">Go somewhere</a>
-            </div>
+          <div *ngFor="let product of products" class="col-sm-2">
+            <ng-container>
+              <app-item [product]="product" (handleItemRoute)="goToProduct($event)"></app-item>
+            </ng-container>
           </div>
     </div>
 </div>

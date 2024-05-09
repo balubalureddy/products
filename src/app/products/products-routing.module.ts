@@ -7,7 +7,7 @@ import { deactivateGuard } from '../deactivate.guard';
 
 const routes: Routes = [
   {path:"",component:ViewProductsComponent},
-  {path:"product/:id",component:ProductDetailComponent},
+  {path:":id",component:ProductDetailComponent},
 ];
 
 @NgModule({

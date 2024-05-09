@@ -24,6 +24,7 @@ export class ViewProductsComponent implements OnInit {
   }
 
   goToProduct(id:any){
+    console.log("am view products")
     console.log(id);
     this.route.navigateByUrl(`/product/${id}`)
   }

@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
+  id:Number | undefined;
   constructor(public http:HttpClient) { }
 
   getProducts(){
@@ -15,6 +16,12 @@ export class ProductService {
   getSingleProduct(id:any){
     return this.http.get(`https://dummyjson.com/products/${id}`);
   }
+
+  storeId(id:any){
+    this.id = id;
+  }
+
+
 }
 
 
