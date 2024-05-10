@@ -23,9 +23,10 @@ export class ViewProductsComponent implements OnInit {
     })
   }
 
-  goToProduct(id:any){
+  goToProduct(product:any){
     console.log("am view products")
-    console.log(id);
-    this.route.navigateByUrl(`/product/${id}`)
+    console.log(product.id);
+    this.productService.sendInfo(product);
+    this.route.navigateByUrl(`/product/${product.id}`)
   }
 }
