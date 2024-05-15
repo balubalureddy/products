@@ -1,6 +1,7 @@
+<input class="form-control form-control-lg m-3" [(ngModel)]="searchTerm" type="text" placeholder="search products" aria-label=".form-control-lg example">
 <div class="container-fluid">
     <div class="row">
-          <div *ngFor="let product of products" class="col-sm-2">
+          <div *ngFor="let product of products | filter: searchTerm : 'title'" class="col-sm-2">
             <ng-container>
               <app-item [product]="product" (handleItemRoute)="goToProduct($event)"></app-item>
             </ng-container>

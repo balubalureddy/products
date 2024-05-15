@@ -13,6 +13,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.productDetail)
+    console.log("is this am looking")
     this.activatedRoute.params.subscribe((params:any)=>{
       console.log(params,params.id)
       let id = params?.id || 0;

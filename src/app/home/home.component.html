@@ -38,3 +38,15 @@
   </div>
 
   <button class="btn btn-danger fs-4" (click)="changeRoute()">button</button>
+
+  <p class="p-3"> about pipes</p>
+<p class="p-3">{{date | date: 'M/d/yy, h:mm a'}}</p>
+<p class="p-3">{{date | date: 'MMM d, y, h:mm:ss a'}}</p>
+<p class="p-3">{{date | date: 'h:mm:ss a'}}</p>
+<p class="p-3">{{date | date: 'MMM d, y'}}</p>
+<p class="p-3">{{"this is pipes example" | uppercase}}</p>
+<p class="p-3">{{"this is pipes example" | titlecase}}</p>
+<p class="p-3">{{"THIS IS PIPES EXAMPLE" | lowercase}}</p>
+<p class="p-3">{{a | currency:'USD' }}</p>
+<p class="p-3">{{b | number:'1.1-1' }}</p>
+<p class="p-3">{{a | percent }}</p>

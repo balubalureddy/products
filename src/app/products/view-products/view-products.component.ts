@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ViewProductsComponent implements OnInit {
   products:any=[];
+  searchTerm:any;
   constructor(private productService:ProductService, private activatedRoute:ActivatedRoute, private route : Router){
 
   }

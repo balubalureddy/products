@@ -7,6 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+
+  date:Date= new Date();
+  a:any= 0.250;
+  b:any= 1.369;
   constructor(private activatedRoute : ActivatedRoute, private route : Router){
 
   }
